@@ -4,10 +4,7 @@
 apt-get update
 
 # Install requirements
-apt-get install -y apache2 build-essential checkinstall php5 php5-cli php5-mcrypt php5-gd php-apc git sqlite php5-sqlite curl php5-curl php5-dev php-pear php5-xdebug vim-nox ruby rubygems sqlite3 libsqlite3-dev
-
-# Install Mailcatcher
-sudo gem install mailcatcher
+apt-get install -y apache2 build-essential checkinstall php5 php5-cli php5-mcrypt php5-gd php-apc git sqlite php5-sqlite curl php5-curl php5-dev php-pear php5-xdebug vim-nox ruby rubygems sqlite3 libsqlite3-dev r-base nodejs npm
 
 # Install MySQL
 sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password root'
@@ -81,9 +78,6 @@ EOF
 )
 echo "${VHOST}" > /etc/apache2/sites-available/default
 
-# Configure PHP to use Mailcatcher
-sudo sed -i "s[^;sendmail_path =.*[sendmail_path = '/usr/bin/env catchmail'[g" /etc/php5/apache2/php.ini
-
 # Configure XDebug
 XDEBUG=$(cat <<EOF
 zend_extension=/usr/lib/php5/20100525/xdebug.so
@@ -129,8 +123,11 @@ sudo a2enmod rewrite
 # Restart Apache
 sudo service apache2 restart
 
-# Start Mailcatcher
-mailcatcher --ip=0.0.0.0
+# phantomjs
+wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-i686.tar.bz2
+tar xvjf phantomjs-1.9.7-linux-i686.tar.bz2
+cd phantomjs-1.9.7-linux-i686
+ln -sf "$(pwd)"/bin/phantomjs /usr/local/bin/phantomjs
 
 # Create the database
 mysql -uroot -proot < /var/www/webapp/sql/setup.sql
