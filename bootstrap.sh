@@ -4,7 +4,7 @@
 apt-get update
 
 # Install requirements
-apt-get install -y apache2 build-essential checkinstall php5 php5-cli php5-mcrypt php5-gd php-apc git sqlite php5-sqlite curl php5-curl php5-dev php-pear php5-xdebug vim-nox ruby rubygems sqlite3 libsqlite3-dev r-base nodejs npm
+apt-get install -y apache2 build-essential checkinstall php5 php5-cli php5-mcrypt php5-gd php-apc git sqlite php5-sqlite curl php5-curl php5-dev php-pear php5-xdebug vim-nox ruby rubygems sqlite3 libsqlite3-dev r-base nodejs npm python-pip
 
 # Install MySQL
 sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password root'
@@ -129,5 +129,10 @@ tar xvjf phantomjs-1.9.7-linux-i686.tar.bz2
 cd phantomjs-1.9.7-linux-i686
 ln -sf "$(pwd)"/bin/phantomjs /usr/local/bin/phantomjs
 
+# pip install
+sudo pip install py_w3c==0.1.1
+sudo pip install colorific==0.2.2
+sudo pip install webcolors==1.4
+
 # Create the database
-mysql -uroot -proot < /var/www/webapp/sql/setup.sql
+# mysql -uroot -proot < /var/www/webapp/sql/setup.sql
