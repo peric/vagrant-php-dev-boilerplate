@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder "../master-thesis/flasknose-core", "/var/www/webapp", id: "vagrant-root"
-  config.vm.synced_folder "../master-thesis/flasknose-core/files", "/var/www/webapp/files", {:mount_options => ['dmode=777','fmode=777'], :owner => "www-data", :group => "www-data"}
+  config.vm.synced_folder "../master-thesis/flasknose-core/data", "/var/www/webapp/data", {:mount_options => ['dmode=777','fmode=777'], :owner => "www-data", :group => "www-data"}
   config.vm.synced_folder "../master-thesis/flasknose-core/scripts", "/var/www/webapp/scripts", {:mount_options => ['dmode=777','fmode=777'], :owner => "www-data", :group => "www-data"}
   config.vm.provision :shell, :path => "bootstrap.sh"
 end
