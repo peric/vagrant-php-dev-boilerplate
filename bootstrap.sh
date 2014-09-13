@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "deb http://cran.rstudio.com/bin/linux/ubuntu precise/" | sudo tee -a /etc/apt/sources.list
+
 # Update apt
 apt-get update
 
@@ -136,3 +138,30 @@ sudo pip install webcolors==1.4
 
 # Create the database
 # mysql -uroot -proot < /var/www/webapp/sql/setup.sql
+
+# Install R packages
+wget http://cran.r-project.org/src/contrib/CORElearn_0.9.43.tar.gz
+wget http://cran.r-project.org/src/contrib/DEoptimR_1.0-1.tar.gz
+wget http://cran.r-project.org/src/contrib/robustbase_0.91-1.tar.gz
+wget http://cran.r-project.org/src/contrib/cvTools_0.3.2.tar.gz
+wget http://cran.r-project.org/src/contrib/nnet_7.3-8.tar.gz
+wget http://cran.r-project.org/src/contrib/rpart_4.1-8.tar.gz
+wget http://cran.r-project.org/src/contrib/numDeriv_2012.9-1.tar.gz
+wget http://cran.r-project.org/src/contrib/lava_1.2.6.tar.gz
+wget http://cran.r-project.org/src/contrib/prodlim_1.4.5.tar.gz
+wget http://cran.r-project.org/src/contrib/ipred_0.9-3.tar.gz
+wget http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
+wget http://cran.r-project.org/src/contrib/randomForest_4.6-10.tar.gz
+
+sudo R CMD INSTALL CORElearn_0.9.43.tar.gz
+sudo R CMD INSTALL DEoptimR_1.0-1.tar.gz
+sudo R CMD INSTALL robustbase_0.91-1.tar.gz
+sudo R CMD INSTALL cvTools_0.3.2.tar.gz
+sudo R CMD INSTALL nnet_7.3-8.tar.gz
+sudo R CMD INSTALL rpart_4.1-8.tar.gz
+sudo R CMD INSTALL numDeriv_2012.9-1.tar.gz
+sudo R CMD INSTALL lava_1.2.6.tar.gz
+sudo R CMD INSTALL prodlim_1.4.5.tar.gz
+sudo R CMD INSTALL ipred_0.9-3.tar.gz # problem
+sudo R CMD INSTALL e1071_1.6-4.tar.gz
+sudo R CMD INSTALL randomForest_4.6-10.tar.gz
