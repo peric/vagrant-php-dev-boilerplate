@@ -154,7 +154,6 @@ wget http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
 wget http://cran.r-project.org/src/contrib/randomForest_4.6-10.tar.gz
 wget http://cran.r-project.org/src/contrib/FNN_1.1.tar.gz
 wget http://cran.r-project.org/src/contrib/kknn_1.2-5.tar.gz
-wget http://cran.r-project.org/src/contrib/ggplot2_1.0.0.tar.gz
 
 sudo R CMD INSTALL CORElearn_0.9.43.tar.gz
 sudo R CMD INSTALL DEoptimR_1.0-1.tar.gz
@@ -170,4 +169,3 @@ sudo R CMD INSTALL e1071_1.6-4.tar.gz
 sudo R CMD INSTALL randomForest_4.6-10.tar.gz
 sudo R CMD INSTALL FNN_1.1.tar.gz
 sudo R CMD INSTALL kknn_1.2-5.tar.gz
-sudo R CMD INSTALL ggplot2_1.0.0.tar.gz
