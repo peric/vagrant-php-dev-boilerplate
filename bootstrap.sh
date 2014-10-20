@@ -153,6 +153,7 @@ wget http://cran.r-project.org/src/contrib/ipred_0.9-3.tar.gz
 wget http://cran.r-project.org/src/contrib/e1071_1.6-4.tar.gz
 wget http://cran.r-project.org/src/contrib/randomForest_4.6-10.tar.gz
 wget http://cran.r-project.org/src/contrib/FNN_1.1.tar.gz
+wget http://cran.r-project.org/src/contrib/igraph_0.7.1.tar.gz
 wget http://cran.r-project.org/src/contrib/kknn_1.2-5.tar.gz
 
 sudo R CMD INSTALL CORElearn_0.9.43.tar.gz
@@ -168,4 +169,5 @@ sudo R CMD INSTALL ipred_0.9-3.tar.gz
 sudo R CMD INSTALL e1071_1.6-4.tar.gz
 sudo R CMD INSTALL randomForest_4.6-10.tar.gz
 sudo R CMD INSTALL FNN_1.1.tar.gz
+sudo R CMD INSTALL igraph_0.7.1.tar.gz
 sudo R CMD INSTALL kknn_1.2-5.tar.gz
